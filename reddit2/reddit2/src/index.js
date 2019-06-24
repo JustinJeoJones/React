@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './cssreset.css';
 import './index.css';
-
+function Header(){
+    return(
+        <div className="header">
+            <span>r/AWW</span>
+        </div>
+    )
+}
 class APICall extends React.Component {
     constructor(){
         super();
@@ -25,14 +32,15 @@ class APICall extends React.Component {
     render = () =>{
         return (
             
-            <div>
+            <div className="layout">
+                <div></div>
                 {this.state.isloaded ?(
                 <ul className="list">
                     {this.state.items.map(item =>(
                         <li key={item.data.title} className="post">
                         <p>{item.data.author}</p>
                         {item.data.title}
-                        <img src={item.data.thumbnail} alt="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"/>
+                        <img className="thumbnail" src={item.data.thumbnail} alt="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"/>
                         </li>
                     ))}
                 </ul>
@@ -40,6 +48,7 @@ class APICall extends React.Component {
                     <p>loading</p>
                 )
                 }
+                <div></div>
             </div>
             
         )}
@@ -50,6 +59,7 @@ class APICall extends React.Component {
 function App (){
     return(
         <div>
+            <Header />
             <APICall />
         </div>
     )
