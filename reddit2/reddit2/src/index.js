@@ -4,9 +4,11 @@ import './cssreset.css';
 import './index.css';
 function Header(){
     return(
-        <div className="header">
-            <span>r/AWW</span>
-        </div>
+        <a href="https://www.reddit.com/r/aww/">
+            <div className="header">
+                <span>r/AWW</span>
+            </div>
+        </a>
     )
 }
 class APICall extends React.Component {
@@ -30,25 +32,28 @@ class APICall extends React.Component {
         )
     }
     render = () =>{
+        
         return (
             
             <div className="layout">
-                <div></div>
+                <div className=""></div>
                 {this.state.isloaded ?(
                 <ul className="list">
                     {this.state.items.map(item =>(
-                        <li key={item.data.title} className="post">
-                        <p>{item.data.author}</p>
-                        {item.data.title}
-                        <img className="thumbnail" src={item.data.thumbnail} alt="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"/>
-                        </li>
+                            <li key={item.data.title} className="post">
+                                <a  href={"https://www.reddit.com"+ item.data.permalink} target="_blank">
+                                    <p>Posted by: <a className="user" href={'https://www.reddit.com/user/'+ item.data.author} target="_blank">{item.data.author}</a></p>
+                                        <p className="title">{item.data.title}</p>
+                                    <img className="thumbnail" src={item.data.thumbnail} alt="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"/>
+                                </a>
+                            </li>
                     ))}
                 </ul>
                 ):(
                     <p>loading</p>
                 )
                 }
-                <div></div>
+                <div className=""></div>
             </div>
             
         )}

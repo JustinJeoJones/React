@@ -3,9 +3,10 @@
     flex-grow: 1;
     justify-content: center;
 }
+.title{
+    max-width: 400px;
+}
 .list{
-    border-style: solid;
-    border-width: 1px; 
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -13,8 +14,12 @@
 .post{
     border-style: solid;
     border-width: 1px; 
+    border-color:  rgb(204, 204, 204);
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
+    
 }
 .thumbnail{
     max-width: 512px;
@@ -25,6 +30,7 @@
 .header{
     background-image: url("https://styles.redditmedia.com/t5_2qh1o/styles/bannerBackgroundImage_wmbf6g1dei301.png");
     background-color: #cccccc;
+    background-position: center; 
     height: 164px;
     line-height: 164px;
     width: 100%;
@@ -33,9 +39,17 @@
     font-size: 3em;
     color: #4dfff9;
     text-shadow: rgb(255, 158, 243) 3px 0px 0px, rgb(255, 158, 243) 2.83487px 0.981584px 0px, rgb(255, 158, 243) 2.35766px 1.85511px 0px, rgb(255, 158, 243) 1.62091px 2.52441px 0px, rgb(255, 158, 243) 0.705713px 2.91581px 0px, rgb(255, 158, 243) -0.287171px 2.98622px 0px, rgb(255, 158, 243) -1.24844px 2.72789px 0px, rgb(255, 158, 243) -2.07227px 2.16926px 0px, rgb(255, 158, 243) -2.66798px 1.37182px 0px, rgb(255, 158, 243) -2.96998px 0.42336px 0px, rgb(255, 158, 243) -2.94502px -0.571704px 0px, rgb(255, 158, 243) -2.59586px -1.50383px 0px, rgb(255, 158, 243) -1.96093px -2.27041px 0px, rgb(255, 158, 243) -1.11013px -2.78704px 0px, rgb(255, 158, 243) -0.137119px -2.99686px 0px, rgb(255, 158, 243) 0.850987px -2.87677px 0px, rgb(255, 158, 243) 1.74541px -2.43999px 0px, rgb(255, 158, 243) 2.44769px -1.73459px 0px, rgb(255, 158, 243) 2.88051px -0.838247px 0px;
+    margin-bottom: 10px;
 }
 span{
     display: inline-block;
   vertical-align: middle;
   line-height: normal;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+a.user{
+    text-decoration: underline;
 }
